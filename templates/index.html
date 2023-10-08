@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <link rel="icon" href="static/images/fevicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Brain Tumor Classification</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome style -->
+    <link href="static/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="static/css/responsive.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span>Sakin</span>
+            </a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html"
+                    >Home <span class="sr-only">(current)</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+
+      <!-- slider section -->
+
+      <section class="slider_section">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <h1 class="hhh">Brain Tumor Classification</h1>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="detail-box">
+                      <p>Choose Image</p>
+                      <div class="upload-container">
+                        <form id="upload-form" enctype="multipart/form-data">
+                          <label for="image-input" class="upload-button">
+                            Select
+                            <input
+                              type="file"
+                              id="image-input"
+                              name="image"
+                              accept="image/*"
+                            />
+                          </label>
+                          <button
+                            type="submit"
+                            id="predict-button"
+                            class="btn-2"
+                          >
+                            Upload & Predict
+                          </button>
+                          <div id="uploading-message" style="display: none">
+                            Uploading image...
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="result-box">
+                      <div id="result"></div>
+                      <img id="uploaded-image" src="" alt="Uploaded Image" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>About Us</h2>
+              </div>
+              <p>
+                The brain tumor Classification process uses a dataset made from
+                3 different dataset for the model training. The Classification
+                model is made using Transfer Learning with SE Attention
+                Mechanism. The model has classification accuracy of 99%. Upload
+                and image to test it.hgknjkbnl
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="static/images/about-img.png" alt="" class="abt" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- info section -->
+
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-6 d-flex justify-content-between align-items-center"
+          >
+            <div class="info_contact">
+              <h4>Contact</h4>
+              <div class="contact_link_box">
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span> md.shakin18@gmail.com </span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- jQery -->
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="static/js/bootstrap.js"></script>
+    <!-- custom js -->
+    <script src="static/js/custom.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
