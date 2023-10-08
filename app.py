@@ -6,7 +6,7 @@ import numpy as np
 app = Flask(__name__)
 
 # model load
-model = tf.keras.models.load_model("Imodel.h5")
+model = tf.keras.models.load_model("model.h5")
 
 
 # upload img function
