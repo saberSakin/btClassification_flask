@@ -38,6 +38,10 @@
       type="text/css"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -87,7 +91,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="detail-box">
-                      <p>Choose Image</p>
+                      <p>Upload a MRI image of brain tumor</p>
                       <div class="upload-container">
                         <form id="upload-form" enctype="multipart/form-data">
                           <label for="image-input" class="upload-button">
@@ -135,14 +139,13 @@
           <div class="col-md-6">
             <div class="detail-box">
               <div class="heading_container">
-                <h2>About Us</h2>
+                <h2>About</h2>
               </div>
               <p>
-                The brain tumor Classification process uses a dataset made from
-                3 different dataset for the model training. The Classification
-                model is made using Transfer Learning with SE Attention
-                Mechanism. The model has classification accuracy of 99%. Upload
-                and image to test it.hgknjkbnl
+                The brain tumor classification uses Transfer Learing with SE
+                Attention Mechanism resulting in 99% accuracy. The model was
+                trained on a dataset containing over 13K brain tumor MRI images.
+                Upload an image to test it.
               </p>
             </div>
           </div>
@@ -167,26 +170,36 @@
           >
             <div class="info_contact">
               <h4>Contact</h4>
-              <div class="contact_link_box">
-                <a href="">
+              <div class="info_social">
+                <a href="mailto:md.shakin18@gmail.com" target="_blank">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span> md.shakin18@gmail.com </span>
+                  <span>md.shakin18@gmail.com</span>
+                </a>
+                <a href="https://www.facebook.com/54k1N/" target="_blank">
+                  <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/saberSakin" target="_blank">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/saber-sakin-287a70218/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/saber.sakin/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://sabersakin.github.io/portfolio1/"
+                  target="_blank"
+                >
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
                 </a>
               </div>
-            </div>
-            <div class="info_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
