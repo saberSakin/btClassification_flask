@@ -2,11 +2,17 @@ from flask import Flask, render_template, request, jsonify
 import tensorflow as tf
 import cv2
 import numpy as np
+import os
+from pyngrok import ngrok
 
 app = Flask(__name__)
 
 # model load
 model = tf.keras.models.load_model("model.h5")
+
+# Create a directory to store uploaded images
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
 # upload img function
@@ -29,7 +35,7 @@ def predict():
         return jsonify({"error": "No image uploaded"})
 
     image = request.files["image"]
-    image_path = "temp.jpg"
+    image_path = os.path.join(UPLOAD_FOLDER, "temp.jpg")
     image.save(image_path)
     processed_image = preprocess_image(image_path)
 
@@ -50,6 +56,16 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0")
+    # Set ngrok authentication token
+    ngrok.set_auth_token("2WXJ3VXNvklW2VrHOTC61x98kOd_2Qg2iv3YbygNbuPT9ED1T")
 
-# ///
+    # Create a ngrok tunnel for your Flask app
+    ngrok_tunnel = ngrok.connect(addr="5000", proto="http", bind_tls=True)
+
+    # Print the public URL
+    print(
+        ' * ngrok tunnel "{}" -> http://127.0.0.1:5000'.format(ngrok_tunnel.public_url)
+    )
+
+    # Run the Flask app
+    app.run()
